@@ -8,7 +8,7 @@ import WebApp from '@twa-dev/sdk';
 
 function App() {
   const { connected } = useTonConnect();
-  const { value, address, sendIncrement } = useCounterContract();
+  // const { value, address, sendIncrement } = useCounterContract();
   const [ userData, setUserData] = useState(0);
 
   const userId = WebApp.initDataUnsafe.user?.id;
@@ -18,7 +18,7 @@ function App() {
   return (
     <div className='App'>
       <div className='Container'>
-        <TonConnectButton />
+        {/* <TonConnectButton />
 
         <div className='Card'>
           <b>Counter Address</b>
@@ -35,9 +35,9 @@ function App() {
           onClick={() => {
             sendIncrement();
           }}
-        >
-          Increment
-        </a>
+        > */}
+          {/* Increment
+        </a> */}
         <h1>Hello</h1>
         <div>{userData ? userData : 0}</div>
 
