@@ -13,6 +13,7 @@ function App() {
 
   const userId = WebApp.initDataUnsafe.user?.id;
   setUserData(userId as any);
+  console.log("userData",userData)
 
   return (
     <div className='App'>
@@ -37,8 +38,10 @@ function App() {
         >
           Increment
         </a>
+        <h1>Hello</h1>
+        <div>{userData ? userData : 0}</div>
+
       </div>
-      <h1>{userData ? userData : 0}</h1>
     </div>
   );
 }
