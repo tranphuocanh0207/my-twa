@@ -2,19 +2,23 @@ import './App.css';
 // import { TonConnectButton } from '@tonconnect/ui-react';
 // import { useTonConnect } from './hooks/useTonConnect';
 // import { useCounterContract } from './hooks/useExampleContract';
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 import WebApp from '@twa-dev/sdk';
 
+function getId() {
+  return WebApp.initDataUnsafe.user?.id;
+}
 
 function App() {
   // const { connected } = useTonConnect();
   // const { value, address, sendIncrement } = useCounterContract();
   const [ userData, setUserData] = useState(0);
 
-  const userId = WebApp.initDataUnsafe.user?.id;
-  setUserData(userId as any);
-  console.log("userData",userData)
-
+  useEffect(()=> {
+    setUserData(getId() as any);  
+   console.log("hello");
+  })
+  
   return (
     <div className='App'>
       <div className='Container'>
